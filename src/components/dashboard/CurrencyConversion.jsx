@@ -68,7 +68,6 @@ const CurrencyConversion = () => {
 
       lastRequestRef.current = { moneda, balance: balanceGTQ };
     } catch (e) {
-      console.error("Error de conversión:", e);
       setError("Error al obtener la conversión.");
     } finally {
       setIsLoading(false);

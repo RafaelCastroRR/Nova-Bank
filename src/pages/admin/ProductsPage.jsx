@@ -102,7 +102,6 @@ const ProductsPage = () => {
       }
 
       if (res.error) {
-        console.error("Error al guardar producto:", res.message || res.error);
         return;
       }
 
@@ -112,7 +111,7 @@ const ProductsPage = () => {
         setProducts(reload.products);
       }
     } catch (err) {
-      console.error("Error inesperado:", err);
+      void err;
     }
 
     setEditingUser(null);
@@ -122,7 +121,6 @@ const ProductsPage = () => {
 
   // %%%%%%% EDITAR PRODUCT %%%%%%%
   const handleEdit = (product) => {
-    console.log("📝 Editando producto:", product);
     setEditingProduct(product);
     setIsCreating(false);
     setDialogOpen(true);

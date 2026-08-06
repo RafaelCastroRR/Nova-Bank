@@ -62,7 +62,6 @@ const UsersPage = () => {
   };
 
   const handleSave = (data) => {
-    console.log('Datos del usuario:', data);
     if(isCreating){
       addUser(data);
       fetchUsersData();
@@ -90,7 +89,6 @@ const UsersPage = () => {
       // Obtener movimientos
       const txRes = await getTransactionsByAccountId(res.account.accountNo);
       if (!txRes.error && txRes.data.transactions) {
-        console.log(txRes)
         setWalletTransactions(txRes.data.transactions.slice(0, 5));
       }
     }

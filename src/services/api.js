@@ -1,8 +1,10 @@
 import axios from "axios";
 import useAuthStore from "../shared/stores/authStore";
 
+export const BASE_URL = "https://bank-api.jollysand-b12045b0.northcentralus.azurecontainerapps.io";
+
 const apiClient = axios.create({
-  baseURL: "https://nova-bank-new.onrender.com/bankSystem/v1",
+  baseURL: `${BASE_URL}/bankSystem/v1`,
   timeout: 5000,
 });
 apiClient.interceptors.request.use(

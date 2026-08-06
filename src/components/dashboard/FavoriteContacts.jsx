@@ -14,7 +14,6 @@ const FavoriteContacts = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        console.log(user.favorites);
         setContacts(user.favorites);
       } catch (err) {
         setError(err.message);

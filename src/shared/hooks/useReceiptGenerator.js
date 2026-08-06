@@ -20,7 +20,6 @@ const useReceiptGenerator = () => {
         doc.addImage(svgBase64, 'SVG', 80, 10, 50, 50);
       } catch (e) {
         toast.error('No se pudo agregar el logo al PDF.');
-        console.error('Error al agregar el logo:', e);
       }
 
       // Título
@@ -68,7 +67,6 @@ const useReceiptGenerator = () => {
       toast.success('Comprobante PDF generado');
     } catch (error) {
       toast.error('Error al generar el comprobante PDF');
-      console.error('Error al generar el PDF:', error);
     }
   };
 

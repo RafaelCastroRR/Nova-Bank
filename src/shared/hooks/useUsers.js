@@ -6,7 +6,6 @@ const useUsers = () => {
 
   const addContact = async (data) => {
     const response = await addContactRequest(data);
-    console.log( 'response', response);
     if (response.error) {
       toast.error(response.e.response.data.msg);
       return
@@ -46,7 +45,6 @@ const useUsers = () => {
       toast.error(response.e.response.data.msg);
       return
     }
-    console.log('response', response.data.users);
     setLoading(false);
     return response.data.users;
   };

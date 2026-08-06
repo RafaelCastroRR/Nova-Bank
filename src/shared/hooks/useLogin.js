@@ -30,7 +30,6 @@ const useLogin = () => {
     const { token, user } = response.data;
 
     loginStore(user, token);
-    console.log(user);
     if(user.role === "USER_ROLE") {
       getMyAccount();
     }

@@ -14,8 +14,6 @@ import {
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const BalanceChart = ({ data }) => {
-
-  console.log(data, 'data');
   const chartData = {
     labels: data.labels,
     datasets: [

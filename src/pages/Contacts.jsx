@@ -84,7 +84,6 @@ const Contacts = () => {
 
   const handleSearchAccount = async () => {
     const accountNo = getValues('accountNo'); 
-    console.log(accountNo)
     if (!accountNo || accountNo.length !== 10) {
       toast.error("Error", {
         description: "Ingresa un número de cuenta válido de 10 caracteres",
@@ -136,7 +135,6 @@ const Contacts = () => {
         toast.success("Contacto agregado exitosamente");
       }
     } catch (error) {
-      console.error('Error al agregar contacto:', error);
       toast.error("Error", {
         description: "No se pudo agregar el contacto",
       });
@@ -144,7 +142,6 @@ const Contacts = () => {
   };
 
   const handleQuickTransfer = () => {
-    console.log('selectedContact:', selectedContact);
     if (!selectedContact || !selectedContact.account) {
       toast.error("Error", {
         description: "El contacto seleccionado no tiene datos de cuenta válidos.",

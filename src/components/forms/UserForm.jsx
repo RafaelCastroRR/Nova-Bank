@@ -165,7 +165,6 @@ const UserForm = ({ user, onSave, onCancel, isCreating = false }) => {
         address: user.address || "",
         status: user.status !== undefined ? user.status : true,
       };
-      console.log("Valores iniciales para reset:", initialValues);
       reset(initialValues, { keepErrors: false, keepDirty: false, keepTouched: false });
     }
   }, [user, reset]);
@@ -191,10 +190,6 @@ const UserForm = ({ user, onSave, onCancel, isCreating = false }) => {
     reset();
     onCancel();
   };
-
-  // Para depuración
-  console.log("Errores de validación:", errors);
-  console.log("isValid:", isValid);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

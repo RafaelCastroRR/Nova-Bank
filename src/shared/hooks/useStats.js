@@ -38,7 +38,6 @@ export const useStats = () => {
      
       return response.data.data;
     } catch (err) {
-      console.error('Error al cargar resumen diario:', err);
       setError(err.message);
       throw err;
     }
@@ -58,7 +57,6 @@ export const useStats = () => {
       
       return response.data.data;
     } catch (err) {
-      console.error('Error al cargar datos del gráfico:', err);
       setError(err.message);
       throw err;
     }
@@ -75,11 +73,9 @@ export const useStats = () => {
       }
       
       setAccounts(response.data.data);
-      console.log(response.data.data);
       return response.data.data;
       
     } catch (err) {
-      console.error('Error al cargar cuentas principales:', err);
       setError(err.message);
       throw err;
     }
@@ -96,10 +92,8 @@ export const useStats = () => {
       }
       
       setTransactions(response.data.data);
-      console.log(response.data.data);
       return response.data.data;
     } catch (err) {
-      console.error('Error al cargar transacciones recientes:', err);
       setError(err.message);
       throw err;
     }
@@ -116,10 +110,8 @@ export const useStats = () => {
       }
       
       setSystemStats(response.data.data);
-      console.log(response.data.data);
       return response.data.data;
     } catch (err) {
-      console.error('Error al cargar estadísticas del sistema:', err);
       setError(err.message);
       throw err;
     }
@@ -136,7 +128,6 @@ export const useStats = () => {
       setActiveProductsCount(response.data.count);
       return response.data.count;
     } catch (err) {
-      console.error('Error al cargar productos activos:', err);
       setError(err.message);
       throw err;
     }
@@ -153,7 +144,6 @@ export const useStats = () => {
       setMonthlyTransactionCounts(response.data.data);
       return response.data.data;
     } catch (err) {
-      console.error('Error al cargar transacciones mensuales:', err);
       setError(err.message);
       throw err;
     }
@@ -185,7 +175,6 @@ export const useStats = () => {
       };
 
     } catch (err) {
-      console.error('Error al cargar datos:', err);
       setError(err.message);
       throw err;
     } finally {
@@ -199,7 +188,6 @@ export const useStats = () => {
     try {
       await loadChartData(newTimeRange);
     } catch (err) {
-      console.error('Error al actualizar rango de tiempo:', err);
     }
   };
 
@@ -234,7 +222,6 @@ export const useStats = () => {
           break;
       }
     } catch (err) {
-      console.error(`Error al recargar ${dataType}:`, err);
       setError(err.message);
     } finally {
       setLoading(false);

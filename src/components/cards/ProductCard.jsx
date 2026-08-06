@@ -1,4 +1,5 @@
 import React from "react";
+import { BASE_URL } from "../../services/api";
 
 const ProductCard = ({
   name,
@@ -10,10 +11,9 @@ const ProductCard = ({
 }) => {
   const imageUrl =
     img && img !== ""
-      ? `http://localhost:3000/${img.replace(/\\/g, "/")}`
+      ? `${BASE_URL}/${img.replace(/\\/g, "/")}`
       : "https://pic.onlinewebfonts.com/thumbnails/icons_328197.svg";
 
-  console.log("Final image URL:", imageUrl);
   return (
     <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
       <a href="#">

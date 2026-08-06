@@ -13,7 +13,6 @@ const useAccount = () => {
     const response = await getMyAccountRequest();
 
     const { account } = response.data;
-    console.log(account)
     setAccount(account)
 
     setLoading(false)

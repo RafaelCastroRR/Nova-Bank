@@ -16,11 +16,6 @@ export const useBalance = (monedaDestino) => {
 
       const cuenta = resCuenta.data.account;
       const numeroCuenta = cuenta?.accountNo;
-      const userId = cuenta?.user;
-
-      console.log("✅ Número de cuenta obtenido:", numeroCuenta);
-      console.log("👤 ID del usuario asociado:", userId);
-      console.log("💰 Balance en GTQ:", cuenta?.balance);
 
       setAccountNo(numeroCuenta);
       setBalanceGTQ(cuenta?.balance);
@@ -29,11 +24,9 @@ export const useBalance = (monedaDestino) => {
         const resBalance = await convertirBalancePorMoneda(numeroCuenta, monedaDestino);
         if (resBalance.error) throw resBalance.e;
 
-        console.log("💱 Datos de conversión:", resBalance.data);
         setBalance(resBalance.data);
       }
     } catch (e) {
-      console.error("❌ Error en useBalance:", e);
       setError(e);
     } finally {
       setLoading(false);

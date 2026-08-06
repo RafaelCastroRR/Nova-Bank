@@ -71,8 +71,6 @@ const SettingsPage = () => {
       updateUser(result.data.user);
       setIsSaved(true);
       setTimeout(() => setIsSaved(false), 3000);
-    } else {
-      console.error("Error al actualizar el usuario:", result.e);
     }
   };
 
@@ -96,7 +94,6 @@ const SettingsPage = () => {
   });
 
   const onPasswordSubmit = async (data) => {
-    console.log('Datos del formulario:', data);
     setPasswordUpdateError("");
     setPasswordUpdateSuccess("");
 
@@ -105,9 +102,7 @@ const SettingsPage = () => {
       password: data.newPassword,
     };
     
-    console.log('Payload a enviar:', payload);
     const result = await updatePasswordApi(payload);
-    console.log(result)
     if(!result.error){
       toast.success("Contraseña cambiada con exito")
     }else{

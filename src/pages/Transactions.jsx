@@ -12,7 +12,6 @@ const Transactions = () => {
   const navigate = useNavigate();
   const accountId = useAccountStore(state => state.account?._id);
   const { transactions, loading } = useTransactions(accountId);
-  console.log(transactions, 'transactions');
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');

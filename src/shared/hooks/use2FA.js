@@ -29,7 +29,6 @@ export const use2FA = () => {
   };
 
   const verify2FA = async (data) => {
-    console.log(data)
     setIsLoading(true);
     try {
       const response = await verify2FARequest(data);

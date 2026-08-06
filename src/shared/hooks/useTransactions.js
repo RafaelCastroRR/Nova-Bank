@@ -24,7 +24,6 @@ const useTransactions = () => {
   const fetchAllTransactions = async () => {
     const response = await getAllTransactionsRequest();
     if (response.error) {
-      console.error("Error al obtener todas las transacciones:", response.error);
       return;
     }
   }
@@ -35,7 +34,6 @@ const useTransactions = () => {
     setLoading(true);
     const response = await getTransactionsRequest(account.accountNo);
     if (response.error) {
-      console.error("Error al obtener transacciones:", response.error);
       setLoading(false);
       return;
     }
@@ -47,7 +45,6 @@ const useTransactions = () => {
   const revertTransaction = async (transactionId) => {
     const response = await cancelTransactionService(transactionId);
     if (response.error) {
-      console.error("Error al revertir transacción:", response.e?.message);
       return response;
     }
 
@@ -62,7 +59,6 @@ const useTransactions = () => {
   const updateTransaction = async (transactionId, data) => {
     const response = await updateTransactionService(transactionId, data);
     if (response.error) {
-      console.error("Error al actualizar transacción:", response.e?.message);
       return response;
     }
     setTransactions((prev) =>
@@ -74,11 +70,6 @@ const useTransactions = () => {
   const createTransaction = async (data) => {
     const response = await createTransactionService(data);
     if (response.error) {
-      console.error(
-        "Error al crear transacción:",
-        response.error,
-        response.e?.response.data.message
-      );
       toast.error("Error al crear transacción", {
         description: response.e?.response.data.message,
         duration: 5000,
@@ -92,7 +83,6 @@ const useTransactions = () => {
   const createDeposit = async (data) => {
     const response = await createDepositService(data);
     if (response.error) {
-      console.error("Error al crear depósito:", response.error);
       return response;
     }
     setTransactions((prev) => [response.data.transaction, ...prev]);
@@ -103,10 +93,6 @@ const useTransactions = () => {
     setLoading(true);
     const response = await getAllTransactionsRequest();
     if (response.error) {
-      console.error(
-        "Error al obtener todas las transacciones:",
-        response.error
-      );
       setLoading(false);
       return;
     }

@@ -37,7 +37,6 @@ const ForgotPassword = () => {
         toast.error(response.e.msg || 'Error al procesar la solicitud.');
       }
     } catch (error) {
-      console.error('Error en el frontend al enviar solicitud:', error);
       toast.error('Ocurrió un error inesperado. Inténtalo de nuevo.');
     }
   };

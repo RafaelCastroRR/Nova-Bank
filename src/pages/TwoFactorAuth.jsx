@@ -18,7 +18,6 @@ const TwoFactorAuth = () => {
     hasStarted2FA.current = true;
     const initialize2FA = async () => {
       const response = await start2FA();
-      console.log(response)
       if (response) {
         setQrCode(response.qrCode);
         setSecretKey(response.manualEntryKey);
