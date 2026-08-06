@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getMyAccount, login as loginRequest } from "../../services/api.js";
 import { toast } from "sonner";
 import useAuthStore from "../stores/authStore";
+import useAccountStore from "../stores/accountStore";
 import useAccount from "./useAccount.js";
 
 const useLogin = () => {
@@ -10,6 +11,7 @@ const useLogin = () => {
   const navigate = useNavigate();
   const loginStore = useAuthStore((state) => state.login);
   const logoutStore = useAuthStore((state) => state.logout);
+  const clearAccount = useAccountStore((state) => state.clearAccount);
   const { getMyAccount } = useAccount();
   const handleLogin = async (data) => {
     setLoading(true);
@@ -32,6 +34,8 @@ const useLogin = () => {
     loginStore(user, token);
     if(user.role === "USER_ROLE") {
       getMyAccount();
+    } else {
+      clearAccount();
     }
     setLoading(false);
     toast.success("¡Bienvenido de nuevo!", {
@@ -53,6 +57,7 @@ const useLogin = () => {
 
   const handleLogout = () => {
     logoutStore();
+    clearAccount();
     toast.success("Has cerrado sesión correctamente", {
       duration: 3000,
     });

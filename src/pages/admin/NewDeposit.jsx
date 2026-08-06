@@ -6,7 +6,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "../../components/ui/Button";
 import { useState, useEffect } from "react";
 import useAccount from "../../shared/hooks/useAccount";
-import  useAccountStore  from "../../shared/stores/accountStore";
 import { toast } from "sonner";
 import useTransactions from "../../shared/hooks/useTransactions";
 import useReceiptGenerator from "../../shared/hooks/useReceiptGenerator";
@@ -30,7 +29,6 @@ const NewDeposit = () => {
   const { createDeposit } = useTransactions();
   const navigate = useNavigate();
   const location = useLocation();
-  const account = useAccountStore((state) => state.account);
   const [foundUser, setFoundUser] = useState(null);
   const [isSearching, setIsSearching] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -144,10 +142,6 @@ const NewDeposit = () => {
   const onSubmit = (data) => {
     if (!foundUser) {
       toast.error("Debes buscar y seleccionar una cuenta de destino válida antes de continuar.");
-      return;
-    }
-    if (data.destinationAccount === String(account.accountNo)) {
-      toast.error("No puedes depositar a tu propia cuenta.");
       return;
     }
     setShowConfirmation(true);
