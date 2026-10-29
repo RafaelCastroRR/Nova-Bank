@@ -1,34 +1,102 @@
-# 🏦 Nova-Bank – Frontend
+# 🏦 Nova-Bank – Modern Banking Platform
 
-Este es el frontend del proyecto **Nova Bank**, una plataforma web que permite a los usuarios gestionar cuentas bancarias, realizar transacciones y consultar su historial financiero de manera segura e intuitiva.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/ShadCN_UI-000000?style=for-the-badge" alt="ShadCN UI" />
+  <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" alt="Axios" />
+  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white" alt="React Router" />
+</p>
 
-## ✨ Funcionalidades principales
+## 📌 Descripción del Proyecto
 
-- Registro e inicio de sesión de usuarios
-- Creación y gestión de cuentas bancarias (ahorro y corriente)
-- Realización de transacciones: depósitos, retiros y transferencias
-- Visualización de historial de movimientos por cuenta
-- Sistema de autenticación con roles (usuario y administrador)
-- Implementación de **autenticación en dos factores (2FA)** para mayor seguridad al realizar transacciones o transferencias
-- Interfaz moderna, responsiva y enfocada en la experiencia del cliente
+Interfaz web moderna, segura y responsiva para la banca digital **Nova Bank**. Proporciona una experiencia financiera fluida que permite a los usuarios gestionar sus cuentas, realizar transferencias bancarias protegidas por autenticación de dos factores (2FA), consultar balances y descargar comprobantes de transacciones.
 
-## 🛠️ Tecnologías utilizadas
+> 🔗 **Repositorio Original:** [CristiannLimaR/Nova-Bank](https://github.com/CristiannLimaR/Nova-Bank)
 
-- **Frontend:** React.js + Tailwind CSS + ShadCN UI  
-- **Backend:** Node.js + Express.js  
-- **Base de datos:** MongoDB  
-- **API REST:** Axios para llamadas al backend  
-- **Control de versiones:** Git & GitHub
+---
 
-> Stack utilizado: **MERN (MongoDB, Express.js, React, Node.js)**
+## ✨ Funcionalidades Principales
 
-## 🔐 Seguridad
+### 👤 Portal del Cliente
+- **Panel Principal:** Resumen en tiempo real de cuentas activas, saldo total y acceso rápido a operaciones.
+- **Transferencias & Movimientos:** Envío de fondos entre cuentas con verificación de seguridad **2FA**.
+- **Historial Financiero:** Consulta detallada de transacciones, depósitos y retiros con filtros avanzados.
+- **Gestión de Contactos:** Agenda de cuentas favoritas y destinatarios frecuentes para transferencias inmediatas.
+- **Generación de Comprobantes:** Descarga de reportes y recibos en PDF con `jsPDF` y `html2canvas`.
 
-- Uso de tokens JWT para autenticación
-- Validación de roles para proteger rutas sensibles
-- **2FA (Two-Factor Authentication)** al realizar operaciones críticas como transferencias o retiros, mediante código enviado por correo electrónico o aplicación de autenticación
+### 🛡️ Módulo de Administración
+- **Gestión de Usuarios:** Panel administrativo para control, suspensión y visualización de usuarios.
+- **Apertura de Cuentas y Depósitos:** Emisión de nuevos productos financieros y acreditación de montos.
+- **Dashboard Estadístico:** Gráficas financieras interactivas de flujo y transacciones.
 
-## 🔗 Backend
+---
 
-Este frontend se comunica con el backend desarrollado con Node.js y Express:  
-👉 [Repositorio Backend](https://github.com/SantiagoContreras1/Bank-System)
+## 🛠️ Tecnologías Utilizadas
+
+- **Framework:** React.js con Vite
+- **Estilos:** Tailwind CSS + DaisyUI + ShadCN UI
+- **Iconografía:** Lucide React + React Icons
+- **Enrutamiento:** React Router DOM (v6) con rutas protegidas por roles
+- **Reportes:** jsPDF + html2canvas
+- **Peticiones HTTP:** Axios con interceptores de autenticación JWT
+
+---
+
+## 🚀 Instalación y Puesta en Marcha
+
+### Prerrequisitos
+- Node.js (v18 o superior)
+- Backend en ejecución ([Nova-Bank-Backend](https://github.com/RafaelCastroRR/Nova-Bank-Backend))
+
+### 1. Clonar el repositorio
+```bash
+git clone git@github.com:RafaelCastroRR/Nova-Bank.git
+cd Nova-Bank
+```
+
+### 2. Instalar dependencias
+```bash
+npm install
+```
+
+### 3. Iniciar el entorno de desarrollo
+```bash
+npm run dev
+```
+
+### 4. Compilar para producción
+```bash
+npm run build
+```
+
+---
+
+## 📂 Estructura del Proyecto
+
+```text
+├── src/
+│   ├── assets/              # Recursos multimedia e ilustraciones
+│   ├── components/          # Componentes modulares y reutilizables
+│   │   ├── forms/           # Formularios de usuarios, productos y transferencias
+│   │   └── ui/              # Componentes base (Button, Card, Dialog, Table, etc.)
+│   ├── layouts/             # Plantillas base de navegación y dashboards
+│   ├── pages/               # Vistas principales (Login, Register, Dashboard, etc.)
+│   │   └── admin/           # Vistas exclusivas para administradores
+│   ├── services/            # Clientes Axios y consumo de endpoints
+│   └── shared/              # Hooks y utilidades compartidas
+├── package.json
+└── README.md
+```
+
+---
+
+## 🔗 Backend Asociado
+Este frontend consume la API RESTful de:  
+👉 **[Nova-Bank-Backend](https://github.com/RafaelCastroRR/Nova-Bank-Backend)**
+
+---
+
+## 📄 Licencia
+Proyecto desarrollado con fines académicos y de demostración técnica.
