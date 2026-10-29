@@ -9,18 +9,19 @@ export const use2FA = () => {
     setIsLoading(true);
     try {
       const response = await start2FARequest();
-      if (response.error) {
+      if (response && response.error) {
+        const errorMsg = response.e?.response?.data?.msg || response.e?.response?.data?.error || "Error al iniciar 2FA";
         toast.error("Error al iniciar 2FA", {
-          description: response.error?.response?.data || "Ocurrió un error al iniciar 2FA",
-          duration: 2000,
+          description: errorMsg,
+          duration: 3000,
         });
         return null;
       }
-      return response.data;
+      return response?.data || response;
     } catch (error) {
       toast.error("Error al iniciar 2FA", {
-        description: "Ocurrió un error al iniciar 2FA",
-        duration: 2000,
+        description: error.message || "Ocurrió un error inesperado al iniciar 2FA",
+        duration: 3000,
       });
       return null;
     } finally {
@@ -32,22 +33,22 @@ export const use2FA = () => {
     setIsLoading(true);
     try {
       const response = await verify2FARequest(data);
-      
-      if (response.error) {
+      if (response && response.error) {
+        const errorMsg = response.e?.response?.data?.msg || response.e?.response?.data?.error || "Código 2FA incorrecto o expirado";
         toast.error("Error al verificar 2FA", {
-          description: response.error?.response?.data || "Ocurrió un error al verificar 2FA",
-          duration: 2000,
+          description: errorMsg,
+          duration: 4000,
         });
         return null;
       }
       toast.success("2FA verificado correctamente", {
         duration: 2000,
       });
-      return response.data;
+      return response?.data || response;
     } catch (error) {
       toast.error("Error al verificar 2FA", {
-        description: "Ocurrió un error al verificar 2FA",
-        duration: 2000,
+        description: error.message || "Ocurrió un error al verificar 2FA",
+        duration: 3000,
       });
       return null;
     } finally {
