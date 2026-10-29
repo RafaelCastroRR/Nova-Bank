@@ -1,7 +1,7 @@
 import axios from "axios";
 import useAuthStore from "../shared/stores/authStore";
 
-export const BASE_URL = "https://bank-api.jollysand-b12045b0.northcentralus.azurecontainerapps.io";
+export const BASE_URL = "";
 
 const apiClient = axios.create({
   baseURL: `${BASE_URL}/bankSystem/v1`,
