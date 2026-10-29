@@ -17,6 +17,24 @@ Interfaz web moderna, segura y responsiva para la banca digital **Nova Bank**. P
 
 ---
 
+## 👥 Cuentas de Prueba para Testing (Clientes)
+
+Para evaluar y probar el portal de cliente, transferencias y el flujo de autenticación 2FA, se pueden utilizar las siguientes cuentas de prueba:
+
+> 🔑 **Contraseña para todos los clientes:** `Nova123!`
+
+| Nombre | Usuario | Correo Electrónico | No. Cuenta | Tipo de Cuenta | Saldo Inicial |
+|---|---|---|---|---|---|
+| **Carlos Morales** | `carlosm` | `carlos.morales@novabank.com` | `1002345671` | Ahorro | **Q 18,500.00** |
+| **Sofia Alvarez** | `sofiaa` | `sofia.alvarez@novabank.com` | `1002345672` | Monetaria | **Q 24,350.50** |
+| **Mateo Castillo** | `mateoc` | `mateo.castillo@novabank.com` | `1002345673` | Monetaria | **Q 42,000.00** |
+| **Elena Rodriguez** | `elenar` | `elena.rodriguez@novabank.com` | `1002345674` | Ahorro | **Q 7,850.25** |
+
+> 📱 **Flujo de Autenticación 2FA:**  
+> Al iniciar sesión por primera vez con cualquiera de los usuarios, la plataforma solicitará escanear el **Código QR** con tu aplicación autenticadora favorita (**Google Authenticator**, **Microsoft Authenticator** o **Authy**) para activar la seguridad 2FA de la cuenta.
+
+---
+
 ## ✨ Funcionalidades Principales
 
 ### 👤 Portal del Cliente
