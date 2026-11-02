@@ -28,13 +28,13 @@ const AdminSidebar = ({ isOpen, setIsOpen }) => {
       label: "Operaciones Bancarias",
       path: "/admin/transactions",
     },
-    { icon: Users, label: "Cuentas", path: "/admin/accounts" }, // <-- cambio aquí
+    { icon: Users, label: "Cuentas", path: "/admin/accounts" },
   ];
 
   return (
     <aside
       className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-gray-900 transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${
-        isOpen ? "translate-x-0" : "-translate-x-full"
+        isOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"
       }`}
     >
       <div className="flex h-16 items-center justify-between px-4">
@@ -61,6 +61,7 @@ const AdminSidebar = ({ isOpen, setIsOpen }) => {
         <button
           onClick={() => setIsOpen(false)}
           className="rounded-md p-1 text-gray-400 hover:bg-gray-800 hover:text-white focus:outline-hidden md:hidden"
+          aria-label="Cerrar menú"
         >
           <X size={20} />
         </button>
@@ -70,6 +71,7 @@ const AdminSidebar = ({ isOpen, setIsOpen }) => {
         <div className="px-4 pt-2">
           <NavLink
             to="/"
+            onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               `group flex items-center rounded-md px-2 py-2 text-sm font-medium bg-gray-800 text-white hover:bg-gray-700 hover:text-white`
             }
@@ -85,6 +87,7 @@ const AdminSidebar = ({ isOpen, setIsOpen }) => {
             <NavLink
               key={item.path}
               to={item.path}
+              onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
                 `group flex items-center rounded-md px-2 py-2 text-sm font-medium ${
                   isActive

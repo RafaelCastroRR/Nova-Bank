@@ -37,7 +37,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   return (
     <aside
       className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-gray-900 transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${
-        isOpen ? 'translate-x-0' : '-translate-x-full'
+        isOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full'
       }`}
     >
       <div className="flex h-16 items-center justify-between px-4">
@@ -53,6 +53,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
         <button
           onClick={() => setIsOpen(false)}
           className="rounded-md p-1 text-gray-400 hover:bg-gray-800 hover:text-white focus:outline-hidden md:hidden"
+          aria-label="Cerrar menú"
         >
           <X size={20} />
         </button>
@@ -63,6 +64,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             <NavLink
               key={item.path}
               to={item.path}
+              onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
                 `group flex items-center rounded-md px-2 py-2 text-sm font-medium ${
                   isActive
@@ -105,4 +107,4 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   );
 };
 
-export default Sidebar; 
+export default Sidebar;

@@ -31,7 +31,7 @@ const BalanceCard = ({ className }) => {
   };
 
   return (
-    <div className={`rounded-lg bg-gray-900 p-5 ${className || ''}`}>
+    <div className={`rounded-lg bg-gray-900 p-4 sm:p-5 ${className || ''}`}>
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-lg font-semibold text-white">Balance</h2>
         <button className="flex items-center text-xs text-gray-400 hover:text-white">
@@ -41,44 +41,48 @@ const BalanceCard = ({ className }) => {
       </div>
 
       <div className="mb-6">
-        <div className="flex items-center justify-between">
-          <div className="min-w-[200px]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="min-w-0">
             <p className="text-gray-400 text-sm">Total Balance</p>
             <div className="h-[40px] flex items-center">
               {isLoading ? (
                 <div className="h-10 w-48 animate-pulse bg-gray-800 rounded"></div>
               ) : (
-                <h3 className="text-3xl font-bold text-white" style={{ fontDisplay: 'swap' }}>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white break-words" style={{ fontDisplay: 'swap' }}>
                   Q {balanceData.totalBalance.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                 </h3>
               )}
             </div>
           </div>
-          <div className="flex flex-col items-end">
+          <div className="flex flex-col items-start sm:items-end">
             <div className="flex space-x-3">
               <button 
                 onClick={() => navigate('/new-transaction')}
                 className="flex items-center justify-center w-12 h-12 bg-black text-white rounded-xl hover:bg-gray-800 transition-colors group"
+                aria-label="Enviar Dinero"
               >
                 <ArrowUpRight className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </button>
-              <button className="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-colors group">
+              <button 
+                className="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-colors group"
+                aria-label="Recibir Dinero"
+              >
                 <ArrowDownLeft className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </button>
             </div>
             <div className="flex space-x-3 mt-2">
               <div className="w-12 text-center">
-                <span className="text-xs text-gray-600 font-medium">Send</span>
+                <span className="text-xs text-gray-400 font-medium">Send</span>
               </div>
               <div className="w-12 text-center">
-                <span className="text-xs text-gray-600 font-medium">Receive</span>
+                <span className="text-xs text-gray-400 font-medium">Receive</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mb-6 grid grid-cols-2 gap-4">
+      <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="rounded-lg bg-gray-800 p-4">
           <div className="mb-2 flex items-center justify-between">
             <div className="flex items-center">

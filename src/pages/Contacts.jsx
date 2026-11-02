@@ -225,7 +225,7 @@ const Contacts = () => {
             <DialogTitle className="text-xl font-bold">Agregar Nuevo Contacto</DialogTitle>
           </DialogHeader>
           <form onSubmit={handleSubmit(handleAddContact)} className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="accountNo">Número de Cuenta</Label>
                 <div className="flex gap-2">

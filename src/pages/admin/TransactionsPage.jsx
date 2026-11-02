@@ -123,7 +123,7 @@ const TransactionsPage = () => {
       </div>
 
       {/* Tabla de depósitos */}
-      <div className="bg-gray-800 rounded-lg shadow overflow-hidden">
+      <div className="bg-gray-800 rounded-lg shadow overflow-x-auto">
         <table className="min-w-full">
           <thead className="bg-gray-900">
             <tr>

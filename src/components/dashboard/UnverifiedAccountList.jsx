@@ -28,7 +28,7 @@ const UnverifiedAccountList = ({ accounts, onVerify }) => {
       <h2 className="text-white text-2xl font-bold mb-6">Cuentas</h2>
 
       {/* Filtros */}
-      <div className="mb-6 flex space-x-3">
+      <div className="mb-6 flex flex-wrap gap-2">
         {["all", "verified", "unverified"].map((f) => (
           <button
             key={f}
@@ -72,7 +72,7 @@ const UnverifiedAccountList = ({ accounts, onVerify }) => {
       )}
 
       {/* Tabla */}
-      <div className="bg-gray-800 rounded-lg shadow overflow-hidden">
+      <div className="bg-gray-800 rounded-lg shadow overflow-x-auto">
         <table className="min-w-full">
           <thead className="bg-gray-900">
             <tr>
