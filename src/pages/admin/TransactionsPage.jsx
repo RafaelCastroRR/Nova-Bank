@@ -65,7 +65,7 @@ const TransactionsPage = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
         <h1 className="text-2xl font-bold text-white">Operaciones Bancarias</h1>
         <button
           className="bg-primary text-white px-4 py-2 rounded-lg flex items-center hover:bg-primary/90"

@@ -107,7 +107,7 @@ const UserEditForm = ({ user, onSave, onCancel }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Información Personal */}
         <div className="space-y-2">
           <Label htmlFor="name">Nombre *</Label>

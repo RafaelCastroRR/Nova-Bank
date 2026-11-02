@@ -36,7 +36,7 @@ const NewAmount = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 bg-gray-800 p-6 rounded-lg shadow">
+    <div className="max-w-md mx-auto mt-6 sm:mt-10 bg-gray-800 p-4 sm:p-6 rounded-lg shadow">
       <h2 className="text-xl font-bold text-white mb-4">Cambiar Monto</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">
@@ -51,21 +51,23 @@ const NewAmount = () => {
             <p className="text-red-400 text-sm mt-1">{errors.amount.message}</p>
           )}
         </div>
-        <Button
-          type="button"
-          onClick={handleSubmit(onSubmit)}
-          className="flex-1 mr-2 aling-center justify-center"
-        >
-          Actualizar Depósito
-        </Button>
-        <Button
-          type="button"
-          variant="outline"
-          onClick={() => navigate(-1)}
-          className="flex-1 aling-center justify-center"
-        >
-          Volver al Inicio
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Button
+            type="button"
+            onClick={handleSubmit(onSubmit)}
+            className="flex-1 justify-center"
+          >
+            Actualizar Depósito
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => navigate(-1)}
+            className="flex-1 justify-center"
+          >
+            Volver al Inicio
+          </Button>
+        </div>
       </form>
     </div>
   );

@@ -195,7 +195,7 @@ const NewTransaction = () => {
 
   if (showReceipt && transactionData) {
     return (
-      <div className="max-w-2xl mx-auto p-6">
+      <div className="max-w-2xl mx-auto p-4 sm:p-6">
         <Breadcrumb />
         <div className="text-center mb-8">
           <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
@@ -251,7 +251,7 @@ const NewTransaction = () => {
           </div>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <Button
             type="button"
             variant="outline"
@@ -276,7 +276,7 @@ const NewTransaction = () => {
   if (showConfirmation) {
     const formData = watch();
     return (
-      <div className="max-w-2xl mx-auto p-6">
+      <div className="max-w-2xl mx-auto p-4 sm:p-6">
         <Breadcrumb />
         <button
           onClick={() => setShowConfirmation(false)}
@@ -320,7 +320,7 @@ const NewTransaction = () => {
             )}
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Button
               type="button"
               variant="outline"
@@ -343,7 +343,7 @@ const NewTransaction = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
+    <div className="max-w-2xl mx-auto p-4 sm:p-6">
       <Breadcrumb />
       <button
         onClick={() => navigate(-1)}
@@ -377,7 +377,7 @@ const NewTransaction = () => {
           >
             Cuenta de Destino
           </label>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <div className="flex-1">
               <input
                 {...register("destinationAccount")}

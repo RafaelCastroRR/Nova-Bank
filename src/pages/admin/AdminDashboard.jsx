@@ -80,7 +80,7 @@ const AdminDashboard = () => {
   
 
   return (
-    <div className="p-6 bg-gray-950 min-h-screen">
+    <div className="p-4 sm:p-6 bg-gray-950 min-h-screen">
       <h1 className="text-3xl font-bold tracking-tight mb-6 text-white">Panel de Administración</h1>
       {loading ? (
         <div className="text-white">Cargando datos...</div>

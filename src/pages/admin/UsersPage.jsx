@@ -97,7 +97,7 @@ const UsersPage = () => {
 
   const AccountDetails = ({ account, transactions }) => (
     <div className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <h4 className="text-sm font-medium text-gray-400">No. de Cuenta</h4>
           <p className="text-white">{account.accountNo}</p>
@@ -164,7 +164,7 @@ const UsersPage = () => {
   const UserDetails = ({ user }) => {
     return (
       <div className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <h4 className="text-sm font-medium text-gray-400">Nombre</h4>
             <p className="text-white">{user.name}</p>
@@ -208,7 +208,7 @@ const UsersPage = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
         <h1 className="text-2xl font-bold text-white">Gestión de Usuarios</h1>
         <Dialog>
           <DialogTrigger asChild>

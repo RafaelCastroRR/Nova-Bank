@@ -101,7 +101,7 @@ const Products = () => {
           <h2 className="text-lg font-semibold text-white">
             Catálogo de Productos
           </h2>
-          <div className="flex items-center space-x-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
               <Input
