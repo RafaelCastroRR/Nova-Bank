@@ -28,10 +28,12 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { Toaster } from "sonner";
 import ForgotPassword from "./pages/ForgotPassword";
 import AccountAdminPage from "./pages/admin/AccountPage";
+import DemoBanner from "./components/DemoBanner";
 
 function App() {
   return (
     <Router>
+      <DemoBanner />
       <Routes>
         {/* Páginas públicas */}
         <Route path="/login" element={<Login />} />
