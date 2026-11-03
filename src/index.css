@@ -279,12 +279,14 @@
     @apply bg-background text-foreground;
   }
 }
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+
+
+@keyframes marquee-smooth {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
-.animate-marquee {
+.animate-marquee-smooth {
   display: inline-flex;
-  animation: marquee 28s linear infinite;
+  animation: marquee-smooth 48s linear infinite;
 }
